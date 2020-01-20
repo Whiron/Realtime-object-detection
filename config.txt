@@ -1,0 +1,40 @@
+Docker
+
+https://www.learnopencv.com/install-opencv-docker-image-ubuntu-macos-windows/
+
+docker pull spmallick/opencv-docker:opencv
+
+Run
+- docker run --device=/dev/video0:/dev/video0 -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 5000:5000 -p 8888:8888 -it spmallick/opencv-docker:opencv /bin/bash
+- docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 5000:5000 -p 8888:8888 -p 8000:8000 -p 80:80 -it spmallick/opencv-docker:opencv /bin/bash
+- 
+List all containers (only IDs)
+docker ps -aq
+Stop all running containers
+docker stop $(docker ps -aq)
+Remove all containers
+docker rm $(docker ps -aq)
+Remove all images
+docker rmi $(docker images -q)
+
+docker start b885ba6117ec
+docker exec -it b885ba6117ec bash
+docker commit b885ba6117ec
+
+docker run -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -p 5000:5000 -p 8888:8888 -p 8000:8000 -p 80:80 -it smart-visio-0.1 /bin/bash
+
+Container ID : b885ba6117ec
+
+OpenCV-3.4.3-py3
+
+ec2-18-221-16-37.us-east-2.compute.amazonaws.com
+
+18.218.149.252
+
+ netstat -tupln
+ kill PID
+
+vncserver -geometry 1340x750
+
+ssh -L 5902:localhost:5902 -i  SarthakDSI1.pem ubuntu@18.221.16.37
+
